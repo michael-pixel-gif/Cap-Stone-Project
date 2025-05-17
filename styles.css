@@ -1,0 +1,135 @@
+/* this will apply to everything */
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color ease-out .3s;
+}
+
+/* creating root colors */
+:root{
+    --dark-bgcolor:black;
+    --light-bgcolor:white
+}
+
+/* this is the whole div */
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    height: auto;
+}
+
+#searchBar{
+    margin: 1em;
+    border-radius: 10px;
+    padding: 1em;
+    width: 50%;
+    box-shadow: 2px 2px 4px black;
+}
+
+/* theme toggle button */
+#themeToggle{
+    padding: 0 .5em;
+    border-radius: 10px;
+}
+
+img{
+    width: 10em;
+}
+
+/* The container that holds all the results */
+.entertainment-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color:antiquewhite;
+    padding: .5em;
+    border-radius: 10px;
+    max-width: 15em;
+    height: auto;
+    text-align: center;
+}
+
+.entertainment-box:hover{
+    box-shadow: 4px 4px 10px black;
+}
+
+/* each result individually */
+#results{
+    gap: 1em; 
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    margin-top: 1em;
+}
+
+/* The search history */
+ul{
+    display: flex;
+}
+
+li{
+    color: black;
+    list-style-type: none;
+    margin: 0 .5em;
+}
+
+/* theme colors */
+.dark{
+    background-color: var(--dark-bgcolor);
+}
+
+.dark .entertainment-box:hover{
+    box-shadow: 4px 4px 10px white;
+}
+
+.dark p{
+    color: black;
+}
+
+.dark h1{
+    color:white;
+}
+
+.dark li {
+    color: white;
+}
+
+.light{
+    background-color: var(--light-bgcolor);
+    color: black;
+}
+
+.light li{
+    color: black;
+}
+
+/* making the webapp responsive */
+@media screen and (max-width: 740px){
+    
+    h1{
+        font-size: small;
+    }
+
+    .filter{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    select, #themeToggle{
+        margin: .1em;
+        text-align: center;
+        width:10em;
+        border-radius: 10px;;
+    }
+
+    #results{
+        grid-template-columns: 1fr;
+    }
+}
